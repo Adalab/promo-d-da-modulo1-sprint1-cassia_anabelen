@@ -1,1 +1,0 @@
-SELECT * FROM tienda_zapatillas.clientes;
