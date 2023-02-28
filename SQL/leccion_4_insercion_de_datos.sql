@@ -35,17 +35,17 @@ INSERT INTO facturas (id_factura, numero_factura, fecha, id_zapatilla, id_emplea
 -- ACTIVIDAD 2
 -- ACTUALIZACION DE DATOS
 
--- CAMBIAR COLOR DE AMARILLAS A ROSAS            
+-- CAMBIAR COLOR DE ROSAS A AMARILLAS           
 UPDATE zapatillas
 SET color = "amarillas"
 WHERE id_zapatilla = 2;
 
--- CAMBIAR CIUDAD DE ALCOBENDAS A A CORUNA
+-- CAMBIAR CIUDAD DE ALCOBENDAS A A CORUÑA
 UPDATE empleados
 SET tienda = 'A Coruña'
 WHERE id_empleado = 1;
 
--- CAMBIAR TELEFONO
+-- CAMBIAR TELEFONOS
 UPDATE clientes
 SET numero_telefono = "123456728"
 WHERE id_cliente = 1;
@@ -54,3 +54,4 @@ WHERE id_cliente = 1;
 UPDATE facturas
 SET total = 89.91
 WHERE id_zapatilla = 2;
+
