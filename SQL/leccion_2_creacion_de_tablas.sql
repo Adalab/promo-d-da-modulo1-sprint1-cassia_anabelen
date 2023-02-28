@@ -9,8 +9,6 @@ CREATE TABLE `zapatillas` (
 	`id_zapatilla` INT NOT NULL AUTO_INCREMENT,
 	`modelo` VARCHAR(45) NOT NULL,
 	`color` VARCHAR(45) NOT NULL,
-	`marca` VARCHAR(45) NOT NULL,
-	`talla` INT NOT NULL,
 	PRIMARY KEY (`id_zapatilla`)
 	);
   
@@ -18,12 +16,13 @@ CREATE TABLE `zapatillas` (
   CREATE TABLE `clientes` (
 	`id_cliente` INT NOT NULL AUTO_INCREMENT,
 	`nombre` VARCHAR(45) NOT NULL,
-	`numero_telefono` INT NOT NULL,
+	`numero_telefono` INT(9) NOT NULL,
 	`email` VARCHAR(45) NOT NULL,
 	`direccion` VARCHAR(45) NOT NULL,
 	`ciudad` VARCHAR(45) DEFAULT NULL,
 	`provincia` VARCHAR(45) NOT NULL,
-	`codigo_postal` INT DEFAULT NULL,
+	`pais` VARCHAR(45) NOT NULL,
+	`codigo_postal` VARCHAR (45) NOT NULL,
 	PRIMARY KEY (`id_cliente`)
 	);
  
@@ -32,20 +31,20 @@ CREATE TABLE `zapatillas` (
   `id_empleado` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `tienda` VARCHAR(45) NOT NULL,
-  `salario` FLOAT NOT NULL,
+  `salario` INT NOT NULL,
   `fecha_incorporacion` DATE NOT NULL,
   PRIMARY KEY (`id_empleado`)
   );
   
   -- CREAR TABLA FACTURAS CON FOREIGN KEY Y REFERENCES
   CREATE TABLE `facturas` (
-	`id_factura` int NOT NULL AUTO_INCREMENT,
-	`numero_factura` varchar(45) NOT NULL,
-	`fecha` date NOT NULL,
-	`id_zapatilla` int NOT NULL,
-	`id_empleado` int NOT NULL,
-	`id_cliente` int NOT NULL,
-	`total` float DEFAULT NULL,
+	`id_factura` INT NOT NULL AUTO_INCREMENT,
+	`numero_factura` VARCHAR(45) NOT NULL,
+	`fecha` DATE NOT NULL,
+	`id_zapatilla` INT NOT NULL,
+	`id_empleado` INT NOT NULL,
+	`id_cliente` INT NOT NULL,
+	`total` FLOAT DEFAULT NULL,
 	PRIMARY KEY (`id_factura`),
 	KEY `fk_facturas_zapatillas` (`id_zapatilla`),
 	KEY `fk_facturas_cliente` (`id_cliente`),
